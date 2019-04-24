@@ -2,6 +2,7 @@ FROM jboss/base:latest
 MAINTAINER Jeff Sun
 
 ENV JBOSS_HOME /opt/jboss-as-7.1.0.Final
+ENV JBOSS_VERSION 7.1.0.Final
 
 # User root user to install software
 USER root
@@ -17,8 +18,8 @@ RUN cd $HOME \
     && unzip jboss-as-7.1.0.Final.zip \
     && mv jboss-as-7.1.0.Final /opt \
     && rm -f jboss-as-7.1.0.Final.zip \
-    && chown -R jboss:0 /opt/jboss-as-7.1.0.Final \
-    && chmod -R g+rw /opt/jboss-as-7.1.0.Final
+    && chown -R jboss:0 ${JBOSS_HOME} \
+    && chmod -R g+rw ${JBOSS_HOME}
 
 USER jboss
 
