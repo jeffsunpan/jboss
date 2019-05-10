@@ -1,5 +1,5 @@
 FROM jboss/base:latest
-MAINTAINER Jeff Sun
+MAINTAINER Jeff SunPan
 
 ENV JBOSS_HOME /opt/jboss-as-7.1.0.Final
 ENV JBOSS_VERSION 7.1.0.Final
