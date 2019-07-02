@@ -8,10 +8,10 @@ ENV JBOSS_VERSION 7.1.0.Final
 USER root
 
 # Install necessary packages
-RUN yum -y install java-1.6.0-openjdk-devel java-1.6.0-openjdk && yum clean all
+RUN yum -y install wget java-1.6.0-openjdk-devel java-1.6.0-openjdk && yum clean all
 
 RUN cd $HOME \
-    && curl -O http://download.jboss.org/jbossas/7.1/jboss-as-7.1.0.Final/jboss-as-${JBOSS_VERSION}.zip \
+    && wget http://download.jboss.org/jbossas/7.1/jboss-as-7.1.0.Final/jboss-as-${JBOSS_VERSION}.zip \
     && unzip jboss-as-${JBOSS_VERSION}.zip \
     && mv jboss-as-${JBOSS_VERSION} /opt \
     && rm -f jboss-as-${JBOSS_VERSION}.zip \
